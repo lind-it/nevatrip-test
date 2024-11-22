@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 2vh;
+    width: 100vw;
+}
+
+.banner{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1vh;
+    width: 50vw;
+    padding: 5px;
+    background-color: #ece9dd;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.banner h2{
+    width: max-content;
+    margin-right: auto;
+    margin-left: 5vw;
+}
+
+.unchanged{
+    outline:none;
+    border: none;
+    background-color: #ece9dd;
+    width: max-content;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    width: min-content;
+    outline:none;
+    border: none;
+}
+
+.buy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buy-button{
+    border: none;
+    background-color: #4aff48;
+    width: 5vw;
+    height: 3vh;
+    border-radius: 10px;
+}

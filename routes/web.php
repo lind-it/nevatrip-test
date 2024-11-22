@@ -6,15 +6,16 @@ use App\Controllers\FakeApiController;
 use App\Controllers\TiccketController;
 
 
-// создаем маршрут для главной страницы
+// создаем маршруты для главной страницы
 Router::route('GET', '/', [MainController::class, 'index']);
+Router::route('GET', '/buy-tickets', [MainController::class, 'buyTickets']);
 
 // создаем маршрут для заказа билетов
-Router::route('GET', '/api', [TiccketController::class, 'createOrder']);
+Router::route('POST', '/create-order', [TiccketController::class, 'createOrder']);
 
 // создаем маршруты фэйк-апи
-Router::route('GET', '/api.site.com/approve/success', [FakeApiController::class, 'success']);
-Router::route('GET', '/api.site.com/approve/fail', [FakeApiController::class, 'fail']);
+Router::route('POST', '/api.site.com/approve', [FakeApiController::class, 'approve']);
+Router::route('POST', '/api.site.com/book', [FakeApiController::class, 'book']);
 
 
 

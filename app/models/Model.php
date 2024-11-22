@@ -6,7 +6,7 @@ class Model
 {
     static private $connect;
 
-    static public function setConnect(PDO $connect)
+    static public function setConnect(\PDO $connect)
     {
         self::$connect = $connect;
     }
@@ -19,9 +19,14 @@ class Model
         //выполняем запрос
         $stmt->execute($data);
 
-        // устанавливаем, чтобы данные передавались в свойства класса
-        $stmt->setFetchMode(PDO::FETCH_CLASS, self::class);
+        if($stmt->errorCode() !== '00000')
+        {
+            return [
+                    'status' => 'error',
+                    'code' => $stmt->errorCode()
+            ];
+        }
 
-        return $stmt->fetch();
+        return ['status' => 'ok'];
     }
 }

@@ -4,20 +4,35 @@ namespace App\Controllers;
 
 class FakeApiController extends Controller
 {
-    public function success()
+    public function approve()
     {
-        return json_encode(['message' => 'order successfully booked']);
-    }
-
-    public function fail()
-    {
-        $fails = [
-            ['error' => 'event cancelled'],
-            ['error' => 'no tickets'],
-            ['error' => 'no seats'],
-            ['error' => 'fan removed'],
+        $messages = [
+            ['message' => 'order successfully approved'],
+            [
+                ['error' => 'event cancelled'],
+                ['error' => 'no tickets'],
+                ['error' => 'no seats'],
+                ['error' => 'fan removed'],
+            ]
         ];
 
-        return json_encode($fails[rand(0, count($fails) - 1)]);
+        $randArrIndex = mt_rand(0, count($messages) - 1);
+        $randMessIndex = mt_rand(0, count($messages[$randArrIndex]) - 1);
+
+        $data = $randArrIndex === 0
+                ? json_encode($messages[$randMessIndex])
+                : json_encode($messages[$randArrIndex][$randMessIndex]);
+
+        return $data;
+    }
+
+    public function book()
+    {
+        $messages = [
+            ['message' => 'order successfully booked'],
+            ['error' => 'barcode already exists']
+        ];
+
+        return json_encode($messages[mt_rand(0, count($messages) - 1)]);
     }
 }
