@@ -22,11 +22,13 @@ class Model
         if($stmt->errorCode() !== '00000')
         {
             return [
-                    'status' => 'error',
-                    'code' => $stmt->errorCode()
+                    'error' => $stmt->errorCode(),
+                    'message' => $stmt->errorInfo()
             ];
         }
 
-        return ['status' => 'ok'];
+        return [
+            'data' => $stmt->fetch(\PDO::FETCH_ASSOC),
+        ];
     }
 }

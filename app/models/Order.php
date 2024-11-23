@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-class Ticket extends Model
+class Order extends Model
 {
+
     public static function generateBarcode()
     {
         $barcodeLength = mt_rand(5, 10);

@@ -15,19 +15,19 @@
             <div class="header">
                 <h2>Король и шут</h2>
                 <div class="price">
-                    <div>Цена билета для взрослых: <input class="unchanged" name="ticket_adult_price" type="text" value="100" readonly></div>
-                    <div>Цена билета для детей: <input class="unchanged" name="ticket_kid_price" type="text" value="50" readonly></div>
+                    <div>Цена билета для взрослых: <input class="unchanged" name="price[adult]" type="text" value="100" readonly></div>
+                    <div>Цена билета для детей: <input class="unchanged" name="price[kid]" type="text" value="50" readonly></div>
                 </div>
             </div>
 
             <div class="form">
                 <div>
                     <label for="">Введите количество взрослых билетов</label>
-                    <input name="ticket_adult_quantity" type="number">
+                    <input name="quantity[adult]" type="number">
                 </div>
                 <div>
                     <label for="">Введите количество детских билетов</label>
-                    <input name="ticket_kid_quantity" type="number">
+                    <input name="quantity[kid]" type="number">
                 </div>
             </div>
 
