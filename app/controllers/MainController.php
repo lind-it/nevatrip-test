@@ -8,9 +8,4 @@ class MainController extends Controller
     {
         return $this->view('index');
     }
-
-    public function buyTickets()
-    {
-        return $this->view('buy-tickets');
-    }
 }

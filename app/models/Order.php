@@ -17,7 +17,7 @@ class Order extends Model
         return $barcode;
     }
 
-    public static function request(string $url, $data, $type)
+    public static function request(string $url, $data, string $type)
     {
         $requestType = [
             'json' => ['Content-Type' => 'application/json'],

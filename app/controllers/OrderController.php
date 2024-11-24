@@ -82,21 +82,18 @@ class OrderController extends Controller
             $approved = Order::request('http://nevatrip-test/api.site.com/approve',  json_encode(['barcode' => $queryData['barcode']]), 'json');
             $approved = json_decode($approved, true);
 
-            if (isset($approved['error']))
-            {
-                return json_encode($approved);
-            }
-
-            return true;
+            return json_encode($approved);
         };
 
         // подтверждаем успешность брони
         if ($booked())
         {
+            $isApproved = $approved();
+
             // подтверждаем оформленный заказ
-            if (!$approved())
+            if (isset($isApproved['error']))
             {
-                return false;
+                return json_encode($isApproved);
             }
         }
 
@@ -112,10 +109,12 @@ class OrderController extends Controller
             // подтверждаем успешность брони
             if ($booked())
             {
+                $isApproved = $approved();
+
                 // подтверждаем оформленный заказ
-                if (!$approved())
+                if (isset($isApproved['error']))
                 {
-                    return false;
+                    return json_encode($isApproved);
                 }
             }
 
