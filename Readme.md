@@ -1,5 +1,5 @@
 <a href="#example-2.1"><h4>Объяснение задания 2.1</h4></a>
-<a href="#example-2.1"><h4>Объяснение задания 2.2</h4></a>
+<a href="#example-2.2"><h4>Объяснение задания 2.2</h4></a>
 
 <a href="#routes"> Маршрутизация </a><br>
 <a href="#controllers"> Контроллеры </a><br>
