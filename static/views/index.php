@@ -39,5 +39,40 @@
         </form>
     </div>
 
+    <div class="banner">
+        <form action="/create-order" method="POST">
+            <input type="hidden" name="event_id" value="002">
+            <div class="header">
+                <h2>Театр Драммы</h2>
+                <div class="price">
+                    <div>Цена билета для взрослых: <input class="unchanged" name="price[adult]" type="text" value="800" readonly></div>
+                    <div>Цена билета для детей: <input class="unchanged" name="price[kid]" type="text" value="400" readonly></div>
+                    <div>Цена льготного билета: <input class="unchanged" name="price[preferential]" type="text" value="400" readonly></div>
+                </div>
+            </div>
+
+            <div class="form">
+                <div>
+                    <label for="">Введите количество взрослых билетов</label>
+                    <input name="quantity[adult]" type="number">
+                </div>
+                <div>
+                    <label for="">Введите количество детских билетов</label>
+                    <input name="quantity[kid]" type="number">
+                </div>
+                <div>
+                    <label for="">Введите количество льготных билетов</label>
+                    <input name="quantity[preferential]" type="number">
+                </div>
+            </div>
+
+            <div class="buy">
+                <div>Дата: <input class="unchanged" name="event_date" type="text" value="14.01.2013" readonly></div>
+                <input class="buy-button" type="submit" value="Купить">
+            </div>
+
+        </form>
+    </div>
+
 </body>
 </html>
